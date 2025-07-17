@@ -1,0 +1,66 @@
+# Tailwind CSS v4.1 Project Rules
+
+## Tailwind CSS Version
+- This project uses **Tailwind CSS v4.1** (latest version)
+- NEVER suggest or use Tailwind CSS v3.x syntax or configuration
+- NEVER suggest `npx tailwindcss init` or `tailwind.config.js` files
+- NEVER suggest CDN links for older versions
+
+## CSS Import Syntax
+- Use `@import "tailwindcss";` in CSS files (v4 syntax)
+- Do NOT use `@tailwind base; @tailwind components; @tailwind utilities;` (v3 syntax)
+- Do NOT suggest PostCSS configuration files
+
+## Build Process
+- Use `tailwindcss --input globals.css --output dist/output.css --watch` for development
+- Use `tailwindcss --input globals.css --output dist/output.css --minify` for production
+- Do NOT suggest webpack, Vite, or other build tools unless specifically requested
+
+## Styling Guidelines
+- When suggesting styling solutions, always use Tailwind CSS v4.1 utility classes
+- Do NOT suggest custom CSS unless absolutely necessary
+- Prefer utility-first approach with v4.1 syntax
+- Use modern CSS features that v4.1 supports
+
+## Configuration
+- Tailwind CSS v4.1 uses CSS-based configuration, not JavaScript config files
+- Customizations should be done in CSS using `@theme` or `@config` directives
+- Do NOT suggest creating `tailwind.config.js` files
+
+## Package Management
+- Use `npm install -D tailwindcss@^4.1.0` for installation
+- Do NOT suggest downgrading to v3.x
+- Do NOT suggest using CDN for production builds
+
+## Examples of CORRECT v4.1 Usage
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #10b981;
+  --font-family-sans: 'Inter', sans-serif;
+}
+
+.custom-class {
+  @apply bg-primary text-white p-4 rounded-lg;
+}
+```
+
+## Examples of INCORRECT v3.x Usage (DO NOT USE)
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## When Asked About Styling
+- Always mention that this project uses Tailwind CSS v4.1
+- Provide v4.1-specific solutions
+- If unsure about v4.1 syntax, ask for clarification rather than suggesting v3.x alternatives
+- Emphasize the benefits of v4.1's CSS-based approach
+
+## Project Structure
+- CSS files should import Tailwind using `@import "tailwindcss";`
+- Build output goes to `dist/` directory
+- Use watch mode for development: `npm run build`
+- Use minified output for production: `npm run build:prod` 

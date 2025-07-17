@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@layer components {
+    .header {
+      @apply bg-[#315e26] flex justify-between items-center p-6;
+    }
+    
+    .header-left {
+      @apply flex items-center gap-8;
+    }
+    
+    .menu-button {
+      @apply text-gray-300 lg:hidden;
+    }
+    
+    .brand-group {
+      @apply flex items-center gap-2;
+    }
+    
+    .brand-icon {
+      @apply text-white text-2xl lg:text-3xl;
+    }
+    
+    .brand-title {
+      @apply text-white text-2xl font-bold lg:text-3xl;
+    }
+
+    .header-right {
+        @apply flex items-center space-x-15;
+    }
+
+    .dashboard-group {
+        @apply flex items-center gap-2;
+    }
+
+    .dashboard-button {
+        @apply text-gray-300 lg:text-3xl hidden lg:block;
+    }
+
+    .dashboard {
+        @apply text-gray-300 text-lg font-semibold hidden lg:block;
+    }
+  
+    .profile-group {
+      @apply flex items-center gap-2;
+    }
+    
+    .profile-button {
+      @apply text-gray-300 lg:text-3xl;
+    }
+  
+    .profile {
+      @apply text-gray-300 text-lg font-semibold hidden lg:block;
+    }
+  }

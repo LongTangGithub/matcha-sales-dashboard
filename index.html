@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Sales Dashboard</title>
+    
+    <link rel="stylesheet" href="dist/output.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-button" title="Menu">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <div class="brand-group">
+                <i data-lucide="leaf" class="brand-icon"></i>
+                <h1 class="brand-title">Matcha Sales</h1>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="dashboard-group">
+                <button class="dashboard-button" title="Dashboard">
+                    <i data-lucide="bar-chart-3"></i>
+                </button>
+                <p class="dashboard">Dashboard</p>
+            </div>
+    
+            <div class="profile-group">
+                <button class="profile-button" title="Profile">
+                    <i data-lucide="user"></i>
+                </button>
+                <p class="profile">Profile</p>
+            </div>      
+        </div>
+    </header>
+    <main>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Initialize all icons with data-lucide attribute
+        lucide.createIcons();
+
+        // Or create specific icons
+        // const coffeeIcon = lucide.createIcon('coffee', {
+        //   size: 24,
+        //   color: '#10b981'
+        // });
+    </script>
+</body>
+</html>
