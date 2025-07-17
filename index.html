@@ -1,47 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matcha Sales Dashboard</title>
-    
-    <link rel="stylesheet" href="dist/output.css">
+
+    <link rel="stylesheet" href="dist/output.css" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="header-left">
-            <button class="menu-button" title="Menu">
-                <i data-lucide="menu"></i>
-            </button>
+      <div class="header-left">
+        <button class="menu-button hover:text-black" title="Menu">
+          <i data-lucide="menu"></i>
+        </button>
 
-            <div class="brand-group">
-                <i data-lucide="leaf" class="brand-icon"></i>
-                <h1 class="brand-title">Matcha Sales</h1>
-            </div>
+        <div class="brand-group">
+          <i data-lucide="leaf" class="brand-icon"></i>
+          <h1 class="brand-title">Matcha Sales</h1>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <div class="dashboard-group">
+          <button class="dashboard-button" title="Dashboard">
+            <i data-lucide="bar-chart-3"></i>
+          </button>
+          <p class="dashboard">Dashboard</p>
         </div>
 
-        <div class="header-right">
-            <div class="dashboard-group">
-                <button class="dashboard-button" title="Dashboard">
-                    <i data-lucide="bar-chart-3"></i>
-                </button>
-                <p class="dashboard">Dashboard</p>
-            </div>
-    
-            <div class="profile-group">
-                <button class="profile-button" title="Profile">
-                    <i data-lucide="user"></i>
-                </button>
-                <p class="profile">Profile</p>
-            </div>      
+        <div class="profile-group">
+          <button class="profile-button" title="Profile">
+            <i data-lucide="user"></i>
+          </button>
+          <p class="profile">Profile</p>
         </div>
+      </div>
     </header>
-    <main>
+    <main class="dashboard-container bg-[#f1ebe1] flex flex-col p-8">
+        <div class="metric-cards__grid">
+            <div class="metric-cards">
+              <h3 class="metric-cards__title">Total Revenue</h3>
+              <p class="metric-cards__value">$125,430</p>
+      
+              <div class="metric-cards__percentage-container">
+                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+                <p class="metric-cards__percentage">+12.5%</p>
+              </div>
+            </div>
+      
+            <div class="metric-cards">
+              <h3 class="metric-cards__title">Monthly Sales</h3>
+              <p class="metric-cards__value">$48,200</p>
+      
+              <div class="metric-cards__percentage-container">
+                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+                <p class="metric-cards__percentage">+8.3%</p>
+              </div>
+            </div>
+      
+            <div class="metric-cards">
+              <h3 class="metric-cards__title">Active Deals</h3>
+              <p class="metric-cards__value">23</p>
+      
+              <div class="metric-cards__percentage-container">
+                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+                <p class="metric-cards__percentage">+5</p>
+              </div>
+            </div>
+      
+            <div class="metric-cards">
+              <h3 class="metric-cards__title">Conversion Rate</h3>
+              <p class="metric-cards__value">68%</p>
+      
+              <div class="metric-cards__percentage-container">
+                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+                <p class="metric-cards__percentage">+2%</p>
+              </div>
+            </div>
+        </div>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -49,14 +88,14 @@
     <script src="js/charts.js"></script>
     <script src="js/dashboard.js"></script>
     <script>
-        // Initialize all icons with data-lucide attribute
-        lucide.createIcons();
+      // Initialize all icons with data-lucide attribute
+      lucide.createIcons();
 
-        // Or create specific icons
-        // const coffeeIcon = lucide.createIcon('coffee', {
-        //   size: 24,
-        //   color: '#10b981'
-        // });
+      // Or create specific icons
+      // const coffeeIcon = lucide.createIcon('coffee', {
+      //   size: 24,
+      //   color: '#10b981'
+      // });
     </script>
-</body>
+  </body>
 </html>
