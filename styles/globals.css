@@ -1,3 +1,4 @@
 @import "tailwindcss";
 @import "./components/header.css";
 @import "./components/metric-cards.css";
+@import "./components/filter-metrics.css";
