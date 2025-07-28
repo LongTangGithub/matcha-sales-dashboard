@@ -11,7 +11,7 @@
   <body>
     <header class="header">
       <div class="header-left">
-        <button class="menu-button hover:text-black" title="Menu">
+        <button id="menu-button" class="menu-button hover:text-black" title="Menu">
           <i data-lucide="menu"></i>
         </button>
 
@@ -172,9 +172,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <script src="js/main.js"></script>
-    <script src="js/charts.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script type="module" src="app/main.js"></script>
+    <script type="module" src="app/charts.js"></script>
+    <script type="module" src="app/dashboard.js"></script>
     <script>
       // Initialize all icons with data-lucide attribute
       lucide.createIcons();
