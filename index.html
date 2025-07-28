@@ -37,97 +37,136 @@
         </div>
       </div>
     </header>
+
+    <aside id="sidebar-overlay" class="sidebar-hidden">
+      <div id="sidebar-backdrop">
+
+      </div>
+
+      <nav id="sidebar-panel">
+        <button id="sidebar-close" title="Close sidebar">
+          <i data-lucide="x"></i>
+        </button>
+
+        <ul>
+          <li>
+            <a href="#">
+              <i data-lucide="layout-dashboard"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i data-lucide="file-text"></i>
+              <span>Reports</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i data-lucide="user"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    
     <main class="dashboard-container bg-[#f1ebe1] flex flex-col p-8">
-        <div class="metric-cards__grid">
-            <div class="metric-cards">
-              <h3 class="metric-cards__title">Total Revenue</h3>
-              <p class="metric-cards__value">$125,430</p>
       
-              <div class="metric-cards__percentage-container">
-                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
-                <p class="metric-cards__percentage">+12.5%</p>
-              </div>
+      <!-- Metric Cards -->
+      <div class="metric-cards__grid">
+          <div class="metric-cards">
+            <h3 class="metric-cards__title">Total Revenue</h3>
+            <p class="metric-cards__value">$125,430</p>
+    
+            <div class="metric-cards__percentage-container">
+              <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+              <p class="metric-cards__percentage">+12.5%</p>
             </div>
-      
-            <div class="metric-cards">
-              <h3 class="metric-cards__title">Monthly Sales</h3>
-              <p class="metric-cards__value">$48,200</p>
-      
-              <div class="metric-cards__percentage-container">
-                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
-                <p class="metric-cards__percentage">+8.3%</p>
-              </div>
+          </div>
+    
+          <div class="metric-cards">
+            <h3 class="metric-cards__title">Monthly Sales</h3>
+            <p class="metric-cards__value">$48,200</p>
+    
+            <div class="metric-cards__percentage-container">
+              <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+              <p class="metric-cards__percentage">+8.3%</p>
             </div>
-      
-            <div class="metric-cards">
-              <h3 class="metric-cards__title">Active Deals</h3>
-              <p class="metric-cards__value">23</p>
-      
-              <div class="metric-cards__percentage-container">
-                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
-                <p class="metric-cards__percentage">+5</p>
-              </div>
+          </div>
+    
+          <div class="metric-cards">
+            <h3 class="metric-cards__title">Active Deals</h3>
+            <p class="metric-cards__value">23</p>
+    
+            <div class="metric-cards__percentage-container">
+              <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+              <p class="metric-cards__percentage">+5</p>
             </div>
-      
-            <div class="metric-cards">
-              <h3 class="metric-cards__title">Conversion Rate</h3>
-              <p class="metric-cards__value">68%</p>
-      
-              <div class="metric-cards__percentage-container">
-                <i data-lucide="arrow-up" class="metric-cards__icon"></i>
-                <p class="metric-cards__percentage">+2%</p>
-              </div>
+          </div>
+    
+          <div class="metric-cards">
+            <h3 class="metric-cards__title">Conversion Rate</h3>
+            <p class="metric-cards__value">68%</p>
+    
+            <div class="metric-cards__percentage-container">
+              <i data-lucide="arrow-up" class="metric-cards__icon"></i>
+              <p class="metric-cards__percentage">+2%</p>
             </div>
-        </div>
+          </div>
+      </div>
         
         <!-- Filters -->
-        <div class="filters__container">
-            <div class="filters__content-container">
-                <p class="filters__title">Time Range</p>
-                <div class="filters__groups">
-                    <select name="time-range" id="time-range" title="Time Range" class="filters__select">
-                        <option value="last-month">This Month</option>
-                        <option value="this-month">Last Month</option>
-                        <option value="last-year">This Quarter</option>
-                    </select>
-                </div>
-            </div>
+      <div class="filters__container">
+          <div class="filters__content-container">
+              <p class="filters__title">Time Range</p>
+              <div class="filters__groups">
+                  <select name="time-range" id="time-range" title="Time Range" class="filters__select">
+                      <option value="last-month">This Month</option>
+                      <option value="this-month">Last Month</option>
+                      <option value="last-year">This Quarter</option>
+                  </select>
+              </div>
+          </div>
 
-            <div class="filters__content-container">
-                <p class="filters__title">Product Type</p>
-                <div class="filters__groups">
-                    <select name="product-type" id="product-type" title="Product Type" class="filters__select">
-                        <option value="all-products">All Products</option>
-                        <option value="ummon">Ummon</option>
-                        <option value="sayaka">Sayaka</option>
-                        <option value="ikuyo">Ikuyo</option>
-                    </select>
-                </div>
-            </div>
+          <div class="filters__content-container">
+              <p class="filters__title">Product Type</p>
+              <div class="filters__groups">
+                  <select name="product-type" id="product-type" title="Product Type" class="filters__select">
+                      <option value="all-products">All Products</option>
+                      <option value="ummon">Ummon</option>
+                      <option value="sayaka">Sayaka</option>
+                      <option value="ikuyo">Ikuyo</option>
+                  </select>
+              </div>
+          </div>
 
-            <div class="filters__content-container">
-                <p class="filters__title">Sales Rep</p>
-                <div class="filters__groups">
-                    <select name="sales-rep" id="sales-rep" title="Sales Rep" class="filters__select">
-                        <option value="all-reps">All Reps</option>
-                        <option value="sarah-chen">Sarah Chen</option>
-                        <option value="jane-smith">Jane Smith</option>
-                        <option value="lisa-park">Lisa Park</option>
-                    </select>
-                </div>
-            </div>
+          <div class="filters__content-container">
+              <p class="filters__title">Sales Rep</p>
+              <div class="filters__groups">
+                  <select name="sales-rep" id="sales-rep" title="Sales Rep" class="filters__select">
+                      <option value="all-reps">All Reps</option>
+                      <option value="sarah-chen">Sarah Chen</option>
+                      <option value="jane-smith">Jane Smith</option>
+                      <option value="lisa-park">Lisa Park</option>
+                  </select>
+              </div>
+          </div>
 
-            <div class="filters__content-container filters__content-container--region">
-                <p class="filters__title">Region Types</p>
-                <div class="filters__groups">
-                    <select name="region-types" id="region-types" title="Region Types" class="filters__select">
-                        <option value="all-regions">All Regions</option>
-                        <option value="north-america">North America</option>
-                        <option value="europe">Europe</option>
-                        <option value="asia">Asia</option>
-                    </select>
-                </div>
-        </div>
+          <div class="filters__content-container filters__content-container--region">
+              <p class="filters__title">Region Types</p>
+              <div class="filters__groups">
+                  <select name="region-types" id="region-types" title="Region Types" class="filters__select">
+                      <option value="all-regions">All Regions</option>
+                      <option value="north-america">North America</option>
+                      <option value="europe">Europe</option>
+                      <option value="asia">Asia</option>
+                  </select>
+              </div>
+          </div>
+      </div>
     </main>
     <footer></footer>
 
