@@ -1,0 +1,33 @@
+@layer components {
+    .sidebar-hidden {
+        @apply fixed inset-0 z-40 opacity-0 pointer-events-none;
+    }
+
+    .sidebar-visible {
+        @apply fixed inset-0 z-40 opacity-100 pointer-events-auto;
+    }
+
+    #sidebar-backdrop {
+        @apply absolute inset-0 bg-black/60;
+    }
+
+    #sidebar-panel {
+        @apply absolute top-0 left-0 h-full w-80 bg-[#315a39] transform -translate-x-full transition-transform duration-200 ease-out flex flex-col;
+    }
+
+    .sidebar-header {
+        @apply flex justify-end items-center p-4
+    }
+
+    #sidebar-close {
+        @apply text-gray-300 hover:bg-[#97cf8a] hover:text-black cursor-pointer transition-colors p-2 rounded-md;
+    }
+
+    #sidebar-panel li a {
+        @apply flex items-center gap-3 text-gray-300 hover:bg-[#97cf8a] hover:text-black transition-colors p-4 rounded-md text-lg font-semibold;
+    }
+
+    #sidebar-panel li a i {
+        @apply text-xl;
+    }
+}
