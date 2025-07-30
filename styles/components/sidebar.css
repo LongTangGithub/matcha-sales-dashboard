@@ -1,18 +1,45 @@
 @layer components {
     .sidebar-hidden {
         @apply fixed inset-0 z-40 opacity-0 pointer-events-none;
+        transition-delay: 250ms; /* Panel slides out */
     }
 
     .sidebar-visible {
         @apply fixed inset-0 z-40 opacity-100 pointer-events-auto;
+        transition-delay: 0ms; /* Fade overlay immediately when opening */
     }
 
     #sidebar-backdrop {
-        @apply absolute inset-0 bg-black/60;
+        @apply absolute inset-0 bg-black/0 transition-all duration-300 ease-in-out;
+        transition-delay: 0ms; /* Backdrop animates with overlay */
+    }
+
+    .sidebar-visible #sidebar-backdrop {
+        @apply bg-black/60;
     }
 
     #sidebar-panel {
-        @apply absolute top-0 left-0 h-full w-80 bg-[#315a39] transform -translate-x-full transition-transform duration-200 ease-out flex flex-col;
+        @apply absolute top-0 left-0 h-full w-80 bg-[#315a39] transform -translate-x-full transition-transform duration-300 ease-out flex flex-col;
+        transition-delay: 50ms; /* Panel slides in after backdrop starts */
+    }
+
+    .sidebar-visible #sidebar-panel {
+        @apply translate-x-0;
+    }
+
+    /* Closing animations - smooth fade out */
+    .sidebar-hidden #sidebar-panel {
+        @apply -translate-x-full transition-transform duration-300 ease-in;
+        transition-delay: 0ms; /* Panel slides out immediately when closing */
+    }
+
+    .sidebar-hidden #sidebar-backdrop {
+        @apply bg-black/0 transition-all duration-300 ease-in;
+        transition-delay: 0ms; /* Backdrop fades with panel  */
+    }
+
+    .menu-button-animating {
+        @apply opacity-75 pointer-events-none;
     }
 
     .sidebar-header {
@@ -20,13 +47,31 @@
     }
 
     #sidebar-close {
-        @apply text-gray-300 hover:bg-[#97cf8a] hover:text-black cursor-pointer transition-colors p-2 rounded-md;
+        @apply text-gray-300 hover:bg-[#97cf8a] hover:text-black cursor-pointer transition-colors p-2 rounded-md flex justify-end mr-4;
     }
 
+    /* Navigation List */
+    #sidebar-panel ul {
+        @apply flex flex-col gap-2 px-4 mt-8 justify-center;
+    }
+
+    .sidebar-header__container {
+        @apply flex gap-4 p-4 items-center ml-4 ;
+    }
+
+    .sidebar-header__icon {
+        @apply text-white;
+    }
+
+    .sidebar-header__title {
+        @apply text-white text-3xl font-bold;
+    }
+    /* Navigation Links */
     #sidebar-panel li a {
         @apply flex items-center gap-3 text-gray-300 hover:bg-[#97cf8a] hover:text-black transition-colors p-4 rounded-md text-lg font-semibold;
     }
 
+    /* Navigation Icons */
     #sidebar-panel li a i {
         @apply text-xl;
     }
