@@ -54,6 +54,15 @@ export const Sidebar = {
                 this.close();
             }
         });
+
+        // Listen for transition end to update state
+        this.elements.overlay.addEventListener('transitionend', (e) => {
+            if (e.propertyName === 'opacity' && !this.isOpen) {
+                // Animation finished, ensure sidebar is hidden
+                this.elements.overlay.classList.add('sidebar-hidden');
+                this.elements.overlay.classList.remove('sidebar-visible');
+            }
+        });
     },
 
     // Toggle sidebar state
@@ -69,16 +78,16 @@ export const Sidebar = {
     open() {
         this.elements.overlay.classList.remove('sidebar-hidden');
         this.elements.overlay.classList.add('sidebar-visible');
-        this.elements.panel.classList.remove('-translate-x-full');
-        this.elements.panel.classList.add('translate-x-0');
         this.isOpen = true;
     },
 
     close() {
+        // Start the closing animation
         this.elements.overlay.classList.remove('sidebar-visible');
         this.elements.overlay.classList.add('sidebar-hidden');
-        this.elements.panel.classList.remove('translate-x-0');
-        this.elements.panel.classList.add('-translate-x-full');
         this.isOpen = false;
+        
+        // Let CSS handle the animation timing
+        // The transitionend event will clean up the classes
     },
 }
