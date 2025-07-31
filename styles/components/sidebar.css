@@ -47,7 +47,7 @@
     }
 
     #sidebar-close {
-        @apply text-gray-300 hover:bg-[#97cf8a] hover:text-black cursor-pointer transition-colors p-2 rounded-md flex justify-end mr-4;
+        @apply text-gray-300 hover:bg-[#97cf8a] hover:text-black cursor-pointer transition-colors p-1 rounded-md flex justify-end w-8 h-8 ml-auto mr-4;
     }
 
     /* Navigation List */
