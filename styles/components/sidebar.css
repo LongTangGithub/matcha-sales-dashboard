@@ -43,7 +43,7 @@
     }
 
     .sidebar-header {
-        @apply flex justify-end items-center p-4
+        @apply flex justify-end items-center p-4;
     }
 
     #sidebar-close {
@@ -56,7 +56,7 @@
     }
 
     .sidebar-header__container {
-        @apply flex gap-4 p-4 items-center ml-4 ;
+        @apply flex gap-4 p-4 items-center ml-4;
     }
 
     .sidebar-header__icon {

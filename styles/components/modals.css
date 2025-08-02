@@ -1,0 +1,82 @@
+@layer components {
+    /* Modal Overlay - covers entire screen */
+    .modal-overlay {
+        @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+        transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+    }
+
+    /* Hidden State */
+    .modal-hidden {
+        @apply opacity-0 invisible;
+    }
+
+    /* Visible State */
+    .modal-visible {
+        @apply opacity-100 visible;
+    }
+
+    /* Dark Backdrop */
+    .modal-backdrop {
+        @apply absolute inset-0 bg-black/50;
+    }
+
+    .modal-container {
+        @apply relative bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden;
+        animation: modalSlideIn 300ms ease-out forwards;
+    }
+
+    .modal-header {
+        @apply flex items-center justify-between p-6 border-b border-gray-200;
+    }
+
+    .modal-title {
+        @apply text-xl font-semibold text-[#315a39] flex items-center gap-2;
+    }
+
+    .modal-close {
+        @apply p-2 rounded-lg text-gray-500 hover:bg-[#97cf8a] hover:text-[#315a39] transition-colors duration-200;
+    }
+
+    .modal-content {
+        @apply p-6 overflow-y-auto max-h-[calc(90vh-120px)]
+    }
+
+    /* Animations */
+    @keyframes modalSlideIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95) translateY(-10px);
+        } 
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    /* Mobile responsive adjustments */
+    @media (max-width: 768px) {
+        .modal-container {
+            @apply mx-2 max-w-full;
+        }
+
+        .modal-content {
+            @apply p-4;
+        }
+
+        .modal-header {
+            @apply p-4;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .modal-overlay {
+            @apply p-2;
+        }
+
+        .modal-container {
+            @apply max-h-[95vh];
+        }
+    }
+
+
+}
